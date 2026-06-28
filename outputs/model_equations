@@ -1,3 +1,4 @@
+#TASK 3
 # Dummy Variable Approach and Model Equations
 
 ## Overview of Categorical Variables
@@ -26,3 +27,55 @@ By dropping the baselines, the multiple regression equation for estimating Month
 * **The Intercept : This represents the expected baseline Monthly Sales when all continuous variables are zero AND the store belongs to the dropped reference categories (an **Airport** store located in the **East**).
 * **The Dummy Coefficients:** These coefficients represent the *difference* in expected sales compared to the baseline. 
     * *Example:* If (for `region_North`) is $15,000  it means that, holding all other factors constant, a North store is expected to generate $15,000 more in monthly sales than a comparable East store.
+
+
+#TASK 8
+## 1. Simple Regression Equations
+Simple regression models allow us to isolate the impact of a single driver on monthly revenue.
+
+### Marketing Spend Model
+**Equation:** $$\text{Monthly Sales} = \beta_0 + \beta_1(\text{Marketing Spend}) + \epsilon$$
+
+* **Business Meaning:** This model calculates the "Baseline Sales" ($\beta_0$) that would occur with zero marketing, plus the incremental revenue generated for every additional dollar invested in advertising ($\beta_1$).
+
+### Footfall Model
+**Equation:** $$\text{Monthly Sales} = \beta_0 + \beta_1(\text{Footfall}) + \epsilon$$
+
+* **Business Meaning:** This calculates the revenue conversion per visitor. It helps leadership understand how much each customer walking through the door is worth in terms of total sales.
+
+---
+
+## 2. Multiple Regression Equation
+The comprehensive model accounts for multiple operational and geographic factors simultaneously to provide a holistic view of store performance.
+
+**Equation:** $$\text{Sales} = \beta_0 + \beta_1(\text{Marketing}) + \beta_2(\text{Footfall}) + \beta_3(\text{Inventory \%}) + \sum_{i=1}^{3} \gamma_i(\text{Region}_i) + \sum_{j=1}^{3} \delta_j(\text{Store Type}_j) + \epsilon$$
+
+---
+
+## 3. Explanation of Coefficients
+* **Intercept ($\beta_0$):** The projected sales for a store in our reference category (Airport, East) when all continuous variables (marketing, footfall, inventory) are set to zero.
+* **Continuous Coefficients ($\beta_1, \beta_2, \beta_3$):** These represent the "levers." They show the average change in monthly sales for every one-unit increase in that specific metric, assuming all other operational factors remain constant.
+* **Dummy Coefficients ($\gamma, \delta$):** These represent the "locational premium" or "format penalty." They indicate how much more (or less) a specific region or store type generates compared to the reference baseline.
+
+---
+
+## 4. Dummy Variables and Reference Categories
+Because regression models require numerical inputs, categorical data (Region and Store Type) must be converted into **Dummy Variables** (binary 1 or 0). 
+
+To prevent the **"Dummy Variable Trap"** (where variables become perfectly correlated, causing the model to crash), we must drop one category from each group to serve as the **Reference Baseline**.
+
+* **Reference Region:** East (All other regions are compared against the East).
+* **Reference Store Type:** Airport (All other formats are compared against the Airport).
+
+*Example:* A "High Street" store coefficient of $-\$23,050$ tells us that, all other factors being equal, a High Street store is expected to generate $23,050 less in revenue than an Airport store.
+
+---
+
+## 5. Final Model Selection
+**Selected Model:** Multiple Linear Regression (Operational & Geographic Drivers).
+
+### Reason for Selection:
+While simple models are useful for quick checks (e.g., "does marketing help?"), the **Multiple Regression model** is the superior choice for strategic decision-making for three reasons:
+1.  **Explanatory Power:** It explains **82.7%** of the variance in sales, compared to just 16% for simple marketing models.
+2.  **Contextual Accuracy:** It prevents us from attributing sales success solely to marketing when a large portion of that success is actually driven by higher foot traffic or superior inventory management.
+3.  **Actionability:** It allows leadership to identify "structural underperformers"—stores that are under-earning based on their potential—allowing for targeted operational interventions rather than blanket policy changes.
