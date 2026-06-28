@@ -34,12 +34,12 @@ By dropping the baselines, the multiple regression equation for estimating Month
 Simple regression models allow us to isolate the impact of a single driver on monthly revenue.
 
 ### Marketing Spend Model
-**Equation:** $$\text{Monthly Sales} = \beta_0 + \beta_1(\text{Marketing Spend}) + \epsilon$$
+**Equation:** {Monthly Sales} = beta_0 + beta_1({Marketing Spend}) + epsilon
 
-* **Business Meaning:** This model calculates the "Baseline Sales" ($\beta_0$) that would occur with zero marketing, plus the incremental revenue generated for every additional dollar invested in advertising ($\beta_1$).
+* **Business Meaning:** This model calculates the "Baseline Sales" (beta_0) that would occur with zero marketing, plus the incremental revenue generated for every additional dollar invested in advertising ($\beta_1$).
 
 ### Footfall Model
-**Equation:** $$\text{Monthly Sales} = \beta_0 + \beta_1(\text{Footfall}) + \epsilon$$
+**Equation:** {Monthly Sales} = beta_0 + beta_1({Footfall}) + epsilon
 
 * **Business Meaning:** This calculates the revenue conversion per visitor. It helps leadership understand how much each customer walking through the door is worth in terms of total sales.
 
@@ -48,7 +48,7 @@ Simple regression models allow us to isolate the impact of a single driver on mo
 ## 2. Multiple Regression Equation
 The comprehensive model accounts for multiple operational and geographic factors simultaneously to provide a holistic view of store performance.
 
-**Equation:** $$\text{Sales} = \beta_0 + \beta_1(\text{Marketing}) + \beta_2(\text{Footfall}) + \beta_3(\text{Inventory \%}) + \sum_{i=1}^{3} \gamma_i(\text{Region}_i) + \sum_{j=1}^{3} \delta_j(\text{Store Type}_j) + \epsilon$$
+**Equation:** {Sales} = beta_0 + beta_1(text{Marketing}) + beta_2({Footfall}) + beta_3({Inventory}) + \sum_{i=1}^{3} \gamma_i({Region}_i) + \sum_{j=1}^{3} \delta_j(\text{Store Type}_j) + epsilon
 
 ---
 
