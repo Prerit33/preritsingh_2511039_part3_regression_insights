@@ -20,11 +20,9 @@ To resolve this, we intentionally **drop one category from each categorical grou
 ## The Multiple Regression Equation
 By dropping the baselines, the multiple regression equation for estimating Monthly Sales conceptually takes the following form:
 
-$$\text{Monthly Sales} = \beta_0 + \beta_1(\text{North}) + \beta_2(\text{South}) + \beta_3(\text{West}) + \beta_4(\text{High Street}) + \beta_5(\text{Mall}) + \beta_6(\text{Residential}) + \Sigma(\beta_i X_i) + \epsilon$$
-
-*(Where $X_i$ represents all the other continuous variables like marketing spend, footfall, and competitor distance)*
+(Where X_i represents all the other continuous variables like marketing spend, footfall, and competitor distance)*
 
 ### Interpreting the Coefficients
-* **The Intercept ($\beta_0$):** This represents the expected baseline Monthly Sales when all continuous variables are zero AND the store belongs to the dropped reference categories (an **Airport** store located in the **East**).
-* **The Dummy Coefficients ($\beta_1 \dots \beta_6$):** These coefficients represent the *difference* in expected sales compared to the baseline. 
-    * *Example:* If $\beta_1$ (for `region_North`) is $ +\$15,000 $, it means that, holding all other factors constant, a North store is expected to generate $15,000 more in monthly sales than a comparable East store.
+* **The Intercept : This represents the expected baseline Monthly Sales when all continuous variables are zero AND the store belongs to the dropped reference categories (an **Airport** store located in the **East**).
+* **The Dummy Coefficients:** These coefficients represent the *difference* in expected sales compared to the baseline. 
+    * *Example:* If (for `region_North`) is $15,000  it means that, holding all other factors constant, a North store is expected to generate $15,000 more in monthly sales than a comparable East store.
